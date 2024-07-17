@@ -10,11 +10,11 @@ public class Tool {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "tool_id")
-    private Long toolId ;
+    private Long toolId;
     private String title;
     private String link;
     private String description;
-
+    @ElementCollection
     private List<String> tags;
 
     public Long getToolId() {
