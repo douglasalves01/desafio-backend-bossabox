@@ -1,0 +1,13 @@
+package tech.desafio_backend_bossabox;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class DesafioBackendBossaboxApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(DesafioBackendBossaboxApplication.class, args);
+	}
+
+}
