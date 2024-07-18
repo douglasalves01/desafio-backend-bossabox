@@ -31,5 +31,11 @@ public class ToolController {
     public List<Tool> getToolsByTag(@RequestParam String tag) {
         return toolService.getToolsByTag(tag);
     }
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity<String> removerTool(@PathVariable("id")Long toolId){
+        toolService.removerToolId(toolId);
+        return ResponseEntity.ok("ok");
+    }
+
 
 }

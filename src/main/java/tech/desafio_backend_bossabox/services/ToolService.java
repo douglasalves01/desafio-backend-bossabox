@@ -25,5 +25,9 @@ public class ToolService {
     public List<Tool> getToolsByTag(String tag) {
         return toolRepository.findByTagsContaining(tag);
     }
+    public void removerToolId(Long id){
+        toolRepository.deleteById(id);
+    }
+
 
 }
