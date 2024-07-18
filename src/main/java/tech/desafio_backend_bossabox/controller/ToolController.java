@@ -1,5 +1,6 @@
 package tech.desafio_backend_bossabox.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tech.desafio_backend_bossabox.entities.Tool;
@@ -10,6 +11,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/tools")
 public class ToolController {
+    @Autowired
     private ToolService toolService;
 
     public ToolController(ToolService toolService) {
@@ -25,4 +27,9 @@ public class ToolController {
         List<Tool> itens=toolService.buscarTools();
         return ResponseEntity.ok(itens);
     }
+    @GetMapping("/tag")
+    public List<Tool> getToolsByTag(@RequestParam String tag) {
+        return toolService.getToolsByTag(tag);
+    }
+
 }
