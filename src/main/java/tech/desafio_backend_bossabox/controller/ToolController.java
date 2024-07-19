@@ -23,13 +23,15 @@ public class ToolController {
         return ResponseEntity.ok(tool);
     }
     @GetMapping
-    public ResponseEntity<List<Tool>> buscarTools(){
-        List<Tool> itens=toolService.buscarTools();
-        return ResponseEntity.ok(itens);
-    }
-    @GetMapping("/tag")
-    public List<Tool> getToolsByTag(@RequestParam String tag) {
-        return toolService.getToolsByTag(tag);
+    public ResponseEntity<List<Tool>> buscarTools(@RequestParam(required = false) String tag){
+        if (tag!=null) {
+            List<Tool> toolsTag=toolService.getToolsByTag(tag);
+            return ResponseEntity.ok(toolsTag);
+        }else{
+            List<Tool> itens=toolService.buscarTools();
+            return ResponseEntity.ok(itens);
+        }
+
     }
     @DeleteMapping(value = "/{id}")
     public ResponseEntity<String> removerTool(@PathVariable("id")Long toolId){

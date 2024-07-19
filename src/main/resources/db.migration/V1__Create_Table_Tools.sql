@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS tb_tools(
+    tool_id INT AUTO_INCREMENT PRIMARY KEY,
+    description VARCHAR(250) NOT NULL,
+    link VARCHAR(180),
+    title VARCHAR(100)
+);

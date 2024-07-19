@@ -8,7 +8,7 @@ import java.util.List;
 @Table(name = "tb_tools")
 public class Tool {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "tool_id")
     private Long toolId;
     private String title;
